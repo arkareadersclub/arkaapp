@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arka Readers Club App</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { border: none; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <iframe src="https://script.google.com/macros/s/AKfycbyyBFZZmwp4Enc9Ksw284HRCymaCCLvI5OJPceZqeP2kOAITTD4IyirKmfjwm8NbMTd/exec"></iframe>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => console.log('Service Worker registered'))
+        .catch(err => console.log('Service Worker failed', err));
+    });
+  }
+</script>
+</body>
+</html>

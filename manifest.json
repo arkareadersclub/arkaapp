@@ -1,0 +1,15 @@
+{
+  "name": "Arka Readers Club",
+  "short_name": "Arka",
+  "start_url": "/ArkaClubApp.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/arkaappicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

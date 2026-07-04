@@ -1,7 +1,8 @@
 {
-  "name": "Arka Readers Club App",
+  "name": "Arka Readers Club",
   "short_name": "Arka",
-  "start_url": "ArkaClubApp.html",
+  "description": "The official app for the Arka Readers Club",
+  "start_url": "./ArkaClubApp.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -9,6 +10,12 @@
     {
       "src": "arkaappicon.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "arkaappicon_192.png",
+      "sizes": "192x192",
       "type": "image/png"
     }
   ]

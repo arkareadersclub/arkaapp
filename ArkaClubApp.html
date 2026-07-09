@@ -5,30 +5,20 @@
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f4f7f6; color: #333; text-align: center;}
-        .launch-card { background: white; padding: 32px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); max-width: 400px; width: 90%; }
-        h1 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 8px; }
-        p { color: #666; font-size: 0.95rem; margin-bottom: 24px; }
-        .btn { display: inline-block; background: #3498db; color: white; text-decoration: none; padding: 12px 28px; border-radius: 6px; font-weight: bold; font-size: 1rem; border: none; cursor: pointer; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { border: none; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
-
-    <div class="launch-card">
-        <h1>Arka Readers Club</h1>
-        <p>Welcome back! Tap below to open your safe reading portal and authenticate with your Google Account.</p>
-        
-        <a href="https://script.google.com/macros/s/AKfycbyyBFZZmwp4Enc9Ksw284HRCymaCCLvI5OJPceZqeP2kOAITTD4IyirKmfjwm8NbMTd/exec" target="_top" class="btn">
-           Launch Application
-        </a>
-    </div>
-
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js');
-        });
-      }
-    </script>
+    <iframe src="https://script.google.com/macros/s/AKfycbyyBFZZmwp4Enc9Ksw284HRCymaCCLvI5OJPceZqeP2kOAITTD4IyirKmfjwm8NbMTd/exec"></iframe>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => console.log('Service Worker registered'))
+        .catch(err => console.log('Service Worker failed', err));
+    });
+  }
+</script>
 </body>
 </html>

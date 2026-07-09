@@ -4,21 +4,31 @@
     <title>Arka Readers Club App</title>
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { border: none; width: 100%; height: 100%; }
-    </style>
+    
+    <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbyyBFZZmwp4Enc9Ksw284HRCymaCCLvI5OJPceZqeP2kOAITTD4IyirKmfjwm8NbMTd/exec">
+
+    <script>
+      // 1. Register your PWA Service Worker so it installs properly
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(registration => console.log('Service Worker registered'))
+            .catch(err => console.log('Service Worker failed', err));
+        });
+      }
+
+      // 2. Forward any incoming URL parameters (like ?page=admin or ?eid=123) 
+      // so your doGet(e) function still reads them perfectly.
+      const currentParams = window.location.search;
+      const targetUrl = "https://script.google.com/macros/s/AKfycbyyBFZZmwp4Enc9Ksw284HRCymaCCLvI5OJPceZqeP2kOAITTD4IyirKmfjwm8NbMTd/exec" + currentParams;
+
+      // 3. Redirect the top-level window instead of using an iframe
+      window.location.replace(targetUrl);
+    </script>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbyyBFZZmwp4Enc9Ksw284HRCymaCCLvI5OJPceZqeP2kOAITTD4IyirKmfjwm8NbMTd/exec"></iframe>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(registration => console.log('Service Worker registered'))
-        .catch(err => console.log('Service Worker failed', err));
-    });
-  }
-</script>
+    <div style="font-family: sans-serif; text-align: center; margin-top: 20%;">
+        <p>Loading Arka Readers Club...</p>
+    </div>
 </body>
 </html>
